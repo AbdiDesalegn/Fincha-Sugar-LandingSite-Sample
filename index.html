@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fincha Sugar Factory - Ethiopia's Premier Sugar & Ethanol Producer</title>
+    <meta name="description" content="Fincha Sugar Factory - Established in 1998, producing 270,000 tons of sugar annually and 8.1 million liters of ethanol in Ethiopia's Oromia Region">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cube"></i>
+                <span>Fincha Sugar</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link admin-link" title="Admin Dashboard">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-elements">
+                <div class="floating-element" style="--delay: 0s"></div>
+                <div class="floating-element" style="--delay: 2s"></div>
+                <div class="floating-element" style="--delay: 4s"></div>
+                <div class="floating-element" style="--delay: 6s"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Ethiopia's Leading</span>
+                    <span class="title-line highlight">Sugar & Ethanol Producer</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Established in 1998, Fincha Sugar Factory produces 270,000 tons of sugar annually and 8.1 million liters of ethanol, 
+                    contributing to Ethiopia's economic development and energy sector.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('products')">
+                        <i class="fas fa-cube"></i>
+                        Explore Products
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        <i class="fas fa-play"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="26">0</div>
+                    <div class="stat-label">Years Established</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="270000">0</div>
+                    <div class="stat-label">Tons Sugar/Year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="31">0</div>
+                    <div class="stat-label">MW Power Generated</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Fincha Sugar Factory</h2>
+                <p class="section-subtitle">Pioneering Ethiopia's sugar industry since 1998</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>Our History</h3>
+                        <p>Established in 1998 in the Finchaa Valley, Horo Guduru Welega Zone, Oromia Region. Located 350km northwest of Addis Ababa, we operate a fully irrigated sugar estate on both banks of the Finchaa River.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Production Capacity</h3>
+                        <p>With a design capacity to crush 12,000 tonnes of cane per day, we produce 270,000 tonnes of sugar annually and 8.1 million liters of ethanol, contributing significantly to Ethiopia's economy.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Energy Generation</h3>
+                        <p>Our 31-megawatt biopower cogeneration plant supplies 21MW internally and contributes 10MW to the national grid, supporting Ethiopia's energy sector.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="image-overlay">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">Sugar and ethanol production for domestic and export markets</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Mill White Sugar</h3>
+                    <p>High-quality mill white sugar produced from locally grown sugarcane, meeting international standards.</p>
+                    <ul class="product-features">
+                        <li>270,000 tonnes annual production</li>
+                        <li>International quality standards</li>
+                        <li>Domestic and export markets</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Ethanol Production</h3>
+                    <p>First ethanol producer in Ethiopia since 2005, contributing to fuel blending and reducing import dependency.</p>
+                    <ul class="product-features">
+                        <li>8.1 million liters annually</li>
+                        <li>Fuel blending applications</li>
+                        <li>Export to international markets</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electricity Generation</h3>
+                    <p>Biopower cogeneration plant producing 31MW of electricity, contributing to Ethiopia's national grid.</p>
+                    <ul class="product-features">
+                        <li>31MW total capacity</li>
+                        <li>21MW internal use</li>
+                        <li>10MW to national grid</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sugarcane Cultivation</h3>
+                    <p>Large-scale sugarcane cultivation on irrigated lands, supporting local agriculture and employment.</p>
+                    <ul class="product-features">
+                        <li>12,000 tonnes cane/day capacity</li>
+                        <li>Irrigated farming practices</li>
+                        <li>Local employment generation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for your sugar needs</p>
+            </div>
+            <div class="services-content">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Logistics & Distribution</h3>
+                    <p>Efficient transportation and delivery services to ensure your sugar reaches you fresh and on time.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Custom Processing</h3>
+                    <p>Tailored sugar processing services to meet your specific requirements and specifications.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing and quality control to ensure every batch meets our high standards.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Programs</h3>
+                    <p>Long-term partnerships with competitive pricing and dedicated support for large-scale buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by industry leaders worldwide</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Fincha Sugar Factory has been our reliable partner for over 10 years. Their quality is unmatched and their service is exceptional."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <span>CEO, Global Food Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The consistency and quality of Fincha's sugar products have helped us maintain our reputation in the market. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Maria Garcia</h4>
+                                <span>Procurement Manager, Sweet Industries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Their sustainable practices and commitment to quality make them our preferred supplier. Excellent partnership!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Ahmed Hassan</h4>
+                                <span>Operations Director, Premium Foods</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-navigation">
+                <button class="nav-btn prev-btn" onclick="changeTestimonial(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="changeTestimonial(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your sugar journey with us?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>Finchaa Sugar Factory<br>Finchaa Valley, Horo Guduru Welega Zone<br>Oromia Region, Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+251 115 512577<br>Fax: +251 576 641015</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>350km northwest of Addis Ababa<br>Near Finchaa River</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="sales">Sales Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="support">Technical Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>Fincha Sugar</span>
+                    </div>
+                    <p>Leading the way in premium sugar production with sustainable practices and innovative technology.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">White Sugar</a></li>
+                        <li><a href="#">Brown Sugar</a></li>
+                        <li><a href="#">Raw Sugar</a></li>
+                        <li><a href="#">Industrial Sugar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Finchaa Valley, Horo Guduru Welega Zone, Oromia Region</p>
+                    <p><i class="fas fa-phone"></i> +251 115 512577</p>
+                    <p><i class="fas fa-fax"></i> +251 576 641015</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fincha Sugar Factory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
