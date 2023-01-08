@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Fincha Sugar Factory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="login-container">
+                <div class="login-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>Admin Login</h2>
+                    <p>Enter your credentials to access the dashboard</p>
+                </div>
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                </form>
+                <div class="login-footer">
+                    <p>Default credentials: admin / admin123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>Fincha Admin</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="analytics">
+                        <a href="#analytics">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="content">
+                        <a href="#content">
+                            <i class="fas fa-edit"></i>
+                            <span>Content Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="products">
+                        <a href="#products">
+                            <i class="fas fa-cube"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="messages">
+                        <a href="#messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>Messages</span>
+                            <span class="badge" id="messageBadge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="users">
+                        <a href="#users">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="settings">
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn btn-secondary" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="pageSubtitle">Welcome to Fincha Sugar Factory Admin Panel</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="adminThemeToggle" title="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboardSection" class="dashboard-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>12,450</h3>
+                                <p>Total Visitors</p>
+                                <span class="stat-change positive">+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>89</h3>
+                                <p>New Messages</p>
+                                <span class="stat-change positive">+5.2%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>156</h3>
+                                <p>Inquiries</p>
+                                <span class="stat-change positive">+8.1%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>98.5%</h3>
+                                <p>Uptime</p>
+                                <span class="stat-change positive">+0.2%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="chart-container">
+                            <h3>Website Traffic</h3>
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Production Statistics</h3>
+                            <canvas id="productionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New user registered:</strong> John Smith</p>
+                                    <span class="activity-time">2 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New message received:</strong> Product inquiry</p>
+                                    <span class="activity-time">15 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Content updated:</strong> About section</p>
+                                    <span class="activity-time">1 hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section id="analyticsSection" class="analytics-section" style="display: none;">
+                    <div class="analytics-header">
+                        <h2>Analytics Dashboard</h2>
+                        <div class="date-range">
+                            <select id="dateRange">
+                                <option value="7">Last 7 days</option>
+                                <option value="30">Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="analytics-grid">
+                        <div class="chart-container large">
+                            <h3>Visitor Analytics</h3>
+                            <canvas id="visitorChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Page Views</h3>
+                            <canvas id="pageViewsChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Traffic Sources</h3>
+                            <canvas id="trafficSourcesChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Content Management Section -->
+                <section id="contentSection" class="content-section" style="display: none;">
+                    <div class="content-header">
+                        <h2>Content Management</h2>
+                        <button class="btn btn-primary" onclick="openContentModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Content
+                        </button>
+                    </div>
+                    <div class="content-list">
+                        <div class="content-item">
+                            <div class="content-info">
+                                <h4>Hero Section</h4>
+                                <p>Main landing page hero content</p>
+                                <span class="content-status published">Published</span>
+                            </div>
+                            <div class="content-actions">
+                                <button class="btn btn-sm btn-secondary">Edit</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-info">
+                                <h4>About Section</h4>
+                                <p>Company information and history</p>
+                                <span class="content-status draft">Draft</span>
+                            </div>
+                            <div class="content-actions">
+                                <button class="btn btn-sm btn-secondary">Edit</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-info">
+                                <h4>Products Section</h4>
+                                <p>Product listings and descriptions</p>
+                                <span class="content-status published">Published</span>
+                            </div>
+                            <div class="content-actions">
+                                <button class="btn btn-sm btn-secondary">Edit</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Messages Section -->
+                <section id="messagesSection" class="messages-section" style="display: none;">
+                    <div class="messages-header">
+                        <h2>Contact Messages</h2>
+                        <div class="message-filters">
+                            <select id="messageFilter">
+                                <option value="all">All Messages</option>
+                                <option value="unread">Unread</option>
+                                <option value="read">Read</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="messages-list">
+                        <div class="message-item unread">
+                            <div class="message-checkbox">
+                                <input type="checkbox" id="msg1">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Product Inquiry</h4>
+                                    <span class="message-time">2 hours ago</span>
+                                </div>
+                                <p class="message-preview">I'm interested in your sugar products for our bakery...</p>
+                                <div class="message-meta">
+                                    <span class="message-sender">John Smith</span>
+                                    <span class="message-email">john@example.com</span>
+                                </div>
+                            </div>
+                            <div class="message-actions">
+                                <button class="btn btn-sm btn-primary">Reply</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-checkbox">
+                                <input type="checkbox" id="msg2">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Partnership Request</h4>
+                                    <span class="message-time">1 day ago</span>
+                                </div>
+                                <p class="message-preview">We would like to discuss a potential partnership...</p>
+                                <div class="message-meta">
+                                    <span class="message-sender">Maria Garcia</span>
+                                    <span class="message-email">maria@company.com</span>
+                                </div>
+                            </div>
+                            <div class="message-actions">
+                                <button class="btn btn-sm btn-primary">Reply</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settingsSection" class="settings-section" style="display: none;">
+                    <div class="settings-header">
+                        <h2>System Settings</h2>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>General Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="siteName">Site Name</label>
+                                    <input type="text" id="siteName" value="Fincha Sugar Factory">
+                                </div>
+                                <div class="form-group">
+                                    <label for="siteDescription">Site Description</label>
+                                    <textarea id="siteDescription" rows="3">Ethiopia's Premier Sugar & Ethanol Producer</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Contact Email</label>
+                                    <input type="email" id="contactEmail" value="info@finchasugar.com">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Settings</button>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h3>Security Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="adminPassword">Change Admin Password</label>
+                                    <input type="password" id="adminPassword" placeholder="New password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" placeholder="Confirm password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
